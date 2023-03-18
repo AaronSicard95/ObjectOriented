@@ -1,0 +1,35 @@
+class Vehicle{
+  constructor(make, model, year){
+  this.make = make;
+  this.model = model;
+  this.year = year;}
+  honk = ()=>("beep");
+  toString = ()=>(`The vehicle is a ${this.make} ${this.model} from ${this.year}.`);
+  }
+
+class Car extends Vehicle{
+constructor(make, model, year){
+super(make, model, year);
+this.numWheels = 4;
+}}
+
+class Motorcycle extends Vehicle{
+constructor(make, model, year){
+super(make, model, year);
+this.numWheels = 2;
+}
+revEngine = (()=>"VROOM!!");
+}
+
+class Garage{
+constructor(capactiy){
+this.capactiy = capactiy;
+this.vehicles = [];}
+add = ((vehicle)=>{
+if (this.vehicles.length < this.capactiy){
+this.vehicles.push(vehicle);
+return"vehicle added";}
+else{
+return "sorry we're full";}
+})
+}
